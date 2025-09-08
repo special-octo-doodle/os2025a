@@ -1,0 +1,17 @@
+ls 현재경로 파일목록 -a 숨김파일 포함
+touch abc.txt, index.py 파일 생성
+mv abc.txt /a/abc.txt or abc.txt bcd.txt 파일이름 변경가능
+cd /abc or cd.. cd. 경로 이동
+mkdir 파일 경로생성
+rm abc.txt 파일 삭제 -r 디렉터리 삭제, -f 삭제확인 무시
+cat abc.txt 텍스트 파일 내용확인
+nano abc.txt 텍스트 편집기
+
+git init 초기세팅
+git status 상태확인
+git add abc.txt 파일 추가 git add . 모두 추가
+git checkout (hash code) 커밋한 시점으로 변경
+git log 커밋 로그 확인
+git config --list 설정값 확인 	--global user.email "you@example.com" 이메일 전역설정
+					--global user.name "you" 이름 전역설정
+git commit -m "커밋 내용"
