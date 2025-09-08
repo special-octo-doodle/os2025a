@@ -7,6 +7,7 @@ rm abc.txt 파일 삭제 -r 디렉터리 삭제, -f 삭제확인 무시
 cat abc.txt 텍스트 파일 내용확인
 nano abc.txt 텍스트 편집기
 
+
 git init 초기세팅
 git status 상태확인
 git add abc.txt 파일 추가 git add . 모두 추가
