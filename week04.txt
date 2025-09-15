@@ -1,4 +1,6 @@
 리눅스 명령어
+nano abc.txt 텍스트 편집기
+
 
 깃 명령어
 git commit --amend -m "수정할 메세지"
