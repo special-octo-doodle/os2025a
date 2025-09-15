@@ -6,3 +6,4 @@ git commit --amend -m "수정할 메세지"
 git reset --hard HEAD~(최근 커밋 날릴 수)
 git fetch
 git pull
+git push -f origin main
