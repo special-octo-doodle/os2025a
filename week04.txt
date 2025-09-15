@@ -1,4 +1,6 @@
-	깃 명령어
+리눅스 명령어
+
+깃 명령어
 git commit --amend -m "수정할 메세지"
 git reset --hard HEAD~(최근 커밋 날릴 수)
 git fetch
