@@ -8,6 +8,8 @@ cp "원본파일" "저장할파일"
 
 깃 명령어
 git reset (git add 등등 초기화)
+git merge 브랜치명
 
 기타
 .gitignore 파일 (*.exe 추가할시 모든 exe파일 제외)
+package, import, func, printIn, printf, {}, ;
