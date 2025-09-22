@@ -1,0 +1,13 @@
+Go 명령어
+go mod init "프로젝트 이름"
+go run main.go
+go build main.go -> out.exe
+
+리눅스 명령어
+cp "원본파일" "저장할파일"
+
+깃 명령어
+git reset (git add 등등 초기화)
+
+기타
+.gitignore 파일 (*.exe 추가할시 모든 exe파일 제외)
