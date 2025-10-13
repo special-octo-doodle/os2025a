@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -33,6 +34,20 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
-	log.Fatal(err)
-	fmt.Println(input)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	input = strings.TrimSpace(input)
+	score, err := strconv.Atoi(input)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if score == 100 {
+		fmt.Println("perfect")
+	} else if score >= 60 {
+		fmt.Println("good")
+	} else {
+		fmt.Println("bad")
+	}
 }
