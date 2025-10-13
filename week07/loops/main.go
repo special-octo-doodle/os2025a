@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"strings"
+	"time"
 )
 
 func main() {
@@ -16,4 +18,13 @@ func main() {
 
 	fmt.Println("int to float64 value:", reflect.TypeOf(float64(length)), float64(length))
 	fmt.Println("float64 to int value:", reflect.TypeOf(int(width)), int(width))
+
+	var now time.Time = time.Now()
+	var day int = now.Day()
+	fmt.Println(day)
+
+	univ := "Go$ inha$"
+	changer := strings.NewReplacer("$", "!")
+	replaced := changer.Replace(univ)
+	fmt.Println(replaced)
 }
