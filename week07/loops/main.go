@@ -4,50 +4,47 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
-	"reflect"
 	"strconv"
 	"strings"
 	"time"
 )
 
 func main() {
-	var length float64 = 1.2
-	var width int = 2
-	fmt.Println("int", int(length)*width)
-	fmt.Println("float64", length*float64(width))
-
-	fmt.Println("int value:", reflect.TypeOf(width), width)
-	fmt.Println("float64 value:", reflect.TypeOf(length), length)
-
-	fmt.Println("int to float64 value:", reflect.TypeOf(float64(length)), float64(length))
-	fmt.Println("float64 to int value:", reflect.TypeOf(int(width)), int(width))
-
-	var now time.Time = time.Now()
-	var day int = now.Day()
-	fmt.Println(day)
-
-	univ := "Go$ inha$"
-	changer := strings.NewReplacer("$", "!")
-	replaced := changer.Replace(univ)
-	fmt.Println(replaced)
+	seconds := time.Now().Unix()
+	rand.Seed(seconds)
+	target := rand.Intn(100) + 1
+	fmt.Println("I've chosen a random number between 1 and 100.")
+	fmt.Println("Can you guess it?")
 
 	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
+	success := false
+	for guesses := 0; guesses < 10; guesses++ {
+		fmt.Println("You have", 10-guesses, "guesses left.")
+		fmt.Print("Make a guess: ")
+		input, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		input = strings.TrimSpace(input)
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		if guess < target {
+			fmt.Println("Oops. Your guess was LOW.")
+		} else if guess > target {
+			fmt.Println("Oops. Your guess was HIGH.")
+		} else {
+			success = true
+			fmt.Println("Good job! You guessed it!")
+			break
+		}
 	}
 
-	input = strings.TrimSpace(input)
-	score, err := strconv.Atoi(input)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if score == 100 {
-		fmt.Println("perfect")
-	} else if score >= 60 {
-		fmt.Println("good")
-	} else {
-		fmt.Println("bad")
+	if !success {
+		fmt.Println("Sorry, you didn't guess my number. It was:", target)
 	}
 }
