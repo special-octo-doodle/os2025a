@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
 	"reflect"
 	"strings"
 	"time"
@@ -27,4 +30,9 @@ func main() {
 	changer := strings.NewReplacer("$", "!")
 	replaced := changer.Replace(univ)
 	fmt.Println(replaced)
+
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	log.Fatal(err)
+	fmt.Println(input)
 }
