@@ -4,17 +4,16 @@ import (
 	"fmt"
 )
 
-func swap(first int, second int) {
+func swap(first *int, second *int) {
 	temp := 0
-	temp = first
-	first = second
-	second = temp
-	fmt.Println(first, second)
+	temp = *first
+	*first = *second
+	*second = temp
 }
 
 func main() {
 	var a, b int = 10, 20
-	fmt.Print(a, b)
-	swap(a, b)
-	fmt.Print(a, b)
+	fmt.Println(a, b)
+	swap(&a, &b)
+	fmt.Println(a, b)
 }
