@@ -1,8 +1,18 @@
 package main
 
-import "greeting"
+import (
+	"fmt"
+	"keyboard"
+	"log"
+)
 
 func main() {
-	greeting.Hello()
-	greeting.Hi()
+	fmt.Print("화씨 입력: ")
+	fahrenheit, err := keyboard.GetFloat()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	celsius := (fahrenheit - 32) * 5 / 9
+	fmt.Printf("화씨 온도 %.2f 섭씨 온도 %.2f", fahrenheit, celsius)
 }
